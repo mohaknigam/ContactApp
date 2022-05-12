@@ -1,7 +1,7 @@
 import {React, useState} from "react";
 import {useNavigate} from 'react-router-dom';
 
-function AddContact(props) {
+function EditContact(props) {
 
     const {addContactHandler} = props;
 
@@ -18,7 +18,7 @@ function AddContact(props) {
         setEmail(e.target.value);
     }
 
-    const add = (e) => {
+    const update = (e) => {
         e.preventDefault();
         if(name === "" && email === ""){
             alert("All the fields are mandatory");
@@ -33,7 +33,7 @@ function AddContact(props) {
         return (
             <div className="ui main" style={{marginTop:"33px"}}>
                 <h1 style={{fontSize:"70px"}}>Add Contact</h1>
-                <form className="ui form" onSubmit={add}>
+                <form className="ui form" onSubmit={update}>
                     <div className="field">
                         <label>Name</label>
                         <input type="text" onChange={onChangeName} value={name} name="name" placeholder="Name" />
@@ -48,4 +48,4 @@ function AddContact(props) {
         );
 }
 
-export default AddContact;
+export default EditContact;

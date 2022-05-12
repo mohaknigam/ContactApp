@@ -7,13 +7,12 @@ const ContactList = (props) => {
 
     const renderList = contacts.map((contact) => {
         return (
-            <ContactCard contact={contact} deleteItemHandler={deleteItemHandler} key={contact.id}/>
+            <ContactCard contact={contact} deleteItemHandler={deleteItemHandler} id={contact.id} key={contact.id}/>
         );
     });
     return(
         <div className="main">
-            {/* how to give css in h2 */}
-            <h2>Contact List</h2> 
+            <h2 style={{marginTop:"80px"}}>Contact List</h2> 
             <Link to="/add"><button className="ui button blue right">Add Contact</button></Link>
             <div className="ui celled list">
             {renderList}
